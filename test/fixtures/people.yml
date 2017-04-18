@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  relation: MyString
+  name: MyString
+  age: 1
+  town: MyString
+  story: MyText
+  missing: false
+
+two:
+  user: two
+  relation: MyString
+  name: MyString
+  age: 1
+  town: MyString
+  story: MyText
+  missing: false
