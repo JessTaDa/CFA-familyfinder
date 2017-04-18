@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @person.user %>
+</p>
+
+<p>
+  <strong>Relation:</strong>
+  <%= @person.relation %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @person.age %>
+</p>
+
+<p>
+  <strong>Town:</strong>
+  <%= @person.town %>
+</p>
+
+<p>
+  <strong>Story:</strong>
+  <%= @person.story %>
+</p>
+
+<p>
+  <strong>Missing:</strong>
+  <%= @person.missing %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
