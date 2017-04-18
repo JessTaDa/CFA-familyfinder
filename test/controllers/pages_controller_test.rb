@@ -6,4 +6,14 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get profile" do
+    get pages_profile_url
+    assert_response :success
+  end
+
+  test "should get person" do
+    get pages_person_url
+    assert_response :success
+  end
+
 end
