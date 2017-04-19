@@ -1,2 +1,48 @@
 <h1>User Profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+
+<!-- <h2>Family</h2> -->
+<!-- <p>Find me in app/views/pages/profile.html.erb</p> -->
+
+<%= Person.where(:user_id => current_user.id) %>
+
+
+
+  <h1>People</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Relation</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Town</th>
+        <th>Story</th>
+        <th>Missing</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @people.each do |person| %>
+        <tr>
+          <td><%= person.user %></td>
+          <td><%= person.relation %></td>
+          <td><%= person.name %></td>
+          <td><%= person.age %></td>
+          <td><%= person.town %></td>
+          <td><%= person.story %></td>
+          <td><%= person.missing %></td>
+          <td><%= link_to 'Show', person %></td>
+          <td><%= link_to 'Edit', edit_person_path(person) %></td>
+          <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+<br>
+<br>
+<br>
+<%= link_to 'Create New Person', new_person_path %>
