@@ -10,6 +10,7 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
+    @person = Person.find(params[:id])
   end
 
   # GET /people/new
@@ -25,6 +26,7 @@ class PeopleController < ApplicationController
   # POST /people.json
   def create
     @person = Person.new(person_params)
+    @person.user_id = current_user.id
 
     respond_to do |format|
       if @person.save
