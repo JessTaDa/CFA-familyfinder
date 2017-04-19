@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
+  <!-- <div class="field">
+    <#%= f.label :user_id %>
+    <#%= f.text_field :user_id %>
+  </div> -->
 
   <div class="field">
     <%= f.label :relation %>
-    <%= f.text_field :relation %>
+    <%= f.select :relation, ['Self', 'Mother', 'Father', 'Sister', 'Brother', 'Other'], include_blank: true %>
   </div>
 
   <div class="field">
