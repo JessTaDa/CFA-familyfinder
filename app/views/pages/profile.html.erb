@@ -3,16 +3,31 @@
 <!-- <h2>Family</h2> -->
 <!-- <p>Find me in app/views/pages/profile.html.erb</p> -->
 
-<%= Person.where(:user_id => current_user.id) %>
+
+<!-- <%#= @user_profile.inspect %> -->
 
 
+<tbody>
+  <% @user_profile.each do |profile| %>
+    <tr>
+
+      <td><%= profile.relation %></td><br>
+      <td><%= profile.name %></td><br>
+      <td><%= profile.age %></td><br>
+      <td><%= profile.town %></td><br>
+
+
+    </tr>
+    <br>
+  <% end %>
+</tbody>
 
   <h1>People</h1>
 
-  <table>
+  <table class="table table-hover">
     <thead>
       <tr>
-        <th>User</th>
+
         <th>Relation</th>
         <th>Name</th>
         <th>Age</th>
@@ -24,9 +39,9 @@
     </thead>
 
     <tbody>
-      <% @people.each do |person| %>
+      <% @person.each do |person| %>
         <tr>
-          <td><%= person.user %></td>
+
           <td><%= person.relation %></td>
           <td><%= person.name %></td>
           <td><%= person.age %></td>
@@ -46,3 +61,12 @@
 <br>
 <br>
 <%= link_to 'Create New Person', new_person_path %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8"></div>
+    <div class="col-xs-6 col-md-4"></div>
+
+  </div>
+</div>

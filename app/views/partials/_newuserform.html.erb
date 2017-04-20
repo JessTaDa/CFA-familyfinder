@@ -16,10 +16,8 @@
     <#%= f.text_field :user_id %>
   </div> -->
 
-
   <div class="field">
-    <%= f.label :relation %>
-    <%= f.select :relation, ['Mother', 'Father', 'Sister', 'Brother', 'Other'], include_blank: true %>
+    <%= f.hidden_field :relation, :value => 'Myself' %>
   </div>
 
   <div class="field">
