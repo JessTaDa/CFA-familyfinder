@@ -5,10 +5,10 @@ RSpec.describe Person, type: :model do
   it "find missing mother" do
     me = User.create
     my_profile = Person.create(:relation => "self", :name => "Jessica", :town => "Melbourne")
-    my_mum = Person.create(:relation => "mother", :name => "Anna", :town => "Melbourne")
+    # my_mum = Person.create(:relation => "mother", :name => "Anna", :town => "Melbourne")
 
-    mum = User.create
-    mum_profile = Person.create(:relation => "self", :name => "Anna", :town => "Melbourne")
+    # mum = User.create
+    # mum_profile = Person.create(:relation => "self", :name => "Anna", :town => "Melbourne")
 
     # some_other_mum = User.create
     # some_other_mum_profile = Person.create(:relation => "self", :name => "Dorris", :town => "Melbourne")
