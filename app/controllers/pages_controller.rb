@@ -20,10 +20,21 @@ class PagesController < ApplicationController
 
   end
 
-  def results
-    @person = Person.missing_persons(current_user)
+  def results_mother
+    @person = Person.missing_persons(current_user).where(:relation => 'Mother')
   end
 
+  def results_father
+    @person = Person.missing_persons(current_user).where(:relation => 'Father')
+  end
+
+  def results_brother
+    @person = Person.missing_persons(current_user).where(:relation => 'Brother')
+  end
+
+  def results_sister
+    @person = Person.missing_persons(current_user).where(:relation => 'Sister')
+  end
 
   def set_current_user
     @user = current_user

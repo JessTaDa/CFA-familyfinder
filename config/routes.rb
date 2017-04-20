@@ -13,9 +13,11 @@ Rails.application.routes.draw do
 
   get 'pages/profile'
 
-  get 'pages/results', to: 'pages#results' # to get pages_results_path in rake routes
+  get 'pages/results_mother', to: 'pages#results_mother' # to get pages_results_path in rake routes
 
   get 'pages/person'
+
+
 
 
   root 'pages#home'

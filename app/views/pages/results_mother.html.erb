@@ -1,5 +1,4 @@
-<h1>Pages#results</h1>
-<p>Find me in app/views/pages/results.html.erb</p>
+<h1>Results for Mother</h1>
 
 <table class="table table-hover">
   <thead>
@@ -18,15 +17,14 @@
   <tbody>
     <% @person.each do |person| %>
       <tr>
-
         <td><%= person.relation %></td>
         <td><%= person.name %></td>
         <td><%= person.age %></td>
         <td><%= person.town %></td>
         <td><%= person.story %></td>
         <td><%= person.missing %></td>
+        <td><%= search_for_missing_mother(person) %></td>
         <td></td>
-
       </tr>
     <% end %>
   </tbody>
