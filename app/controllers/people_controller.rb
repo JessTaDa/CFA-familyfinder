@@ -10,7 +10,8 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
-    @person = Person.find(params[:id])
+    # @person = Person.find(params[:id])
+    @people = Person.where(:user_id => current_user.id)
   end
 
   # GET /people/new

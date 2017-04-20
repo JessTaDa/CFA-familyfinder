@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     root 'pages#profile', as: :authenticated_person
   end
 
+  get 'people/newuserprofile'
+
   get 'pages/home'
 
   get 'pages/profile'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   get 'pages/person'
 
   root 'pages#home'
+
+
 
   resources :people
   # resources :registrations

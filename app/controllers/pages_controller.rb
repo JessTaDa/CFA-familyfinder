@@ -7,7 +7,11 @@ class PagesController < ApplicationController
   end
 
   def profile
-    # @user.email
+    @person = current_user.persons
+    # @people = Person.where(:user_id => current_user.id)
+    @user_profile = Person.where(:relation => 'Self', :user_id => current_user.id)
+
+
   end
 
   def person
