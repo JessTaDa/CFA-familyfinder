@@ -5,17 +5,27 @@ class PeopleController < ApplicationController
   # GET /people.json
   def index
     @people = Person.all
+    # ransack
+    @q = Person.ransack(params[:q])
+    @people = @q.result#.includes(:relation).people(params[:person])
   end
 
-  # GET /people/1
-  # GET /people/1.json
+    # GET /people/1
+    # GET /people/1.json
   def show
     # @person = Person.find(params[:id])
     @people = Person.where(:user_id => current_user.id)
+    # ransack
+    @q = Person.ransack(params[:q])
+    @people = @q.result#.includes(:relation).people(params[:person])
   end
 
   # GET /people/new
   def new
+    @person = Person.new
+  end
+
+  def newuserprofile
     @person = Person.new
   end
 
@@ -72,6 +82,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:user_id, :relation, :name, :age, :town, :story, :missing)
+      params.require(:person).permit(:user_id, :relation, :name, :age, :town, :story, :missing, :q)
     end
-end
+  end

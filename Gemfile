@@ -12,6 +12,7 @@ gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -41,6 +42,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'pry'
 end
 
 group :development do

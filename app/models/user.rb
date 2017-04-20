@@ -5,12 +5,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-after_create :assign_relation_self
-
-def assign_relation_self
-  self.relation(:'Self')
-  
-end
-
-
 end

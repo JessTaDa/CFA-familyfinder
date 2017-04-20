@@ -1,33 +1,35 @@
 <h1>User Profile</h1>
 
-<!-- <h2>Family</h2> -->
-<!-- <p>Find me in app/views/pages/profile.html.erb</p> -->
-
-
-<!-- <%#= @user_profile.inspect %> -->
-
-
-<tbody>
-  <% @user_profile.each do |profile| %>
+<table class="table table-hover">
+  <thead>
     <tr>
-
-      <td><%= profile.relation %></td><br>
-      <td><%= profile.name %></td><br>
-      <td><%= profile.age %></td><br>
-      <td><%= profile.town %></td><br>
-
-
+      <th>Name</th>
+      <th>Age</th>
+      <th>Town</th>
+      <th colspan="3"></th>
     </tr>
-    <br>
-  <% end %>
-</tbody>
+  </thead>
 
-  <h1>People</h1>
+  <tbody>
+    <% @user_profile.each do |profile| %>
+      <tr>
+        <td><%= profile.name %></td>
+        <td><%= profile.age %></td>
+        <td><%= profile.town %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- <h2>Search for people</h2> -->
+<!-- <%#= render 'partials/searchform', person: @person %> -->
+
+  <h1>Family</h1>
 
   <table class="table table-hover">
     <thead>
       <tr>
-
         <th>Relation</th>
         <th>Name</th>
         <th>Age</th>
@@ -50,13 +52,12 @@
           <td><%= person.missing %></td>
           <td><%= link_to 'Show', person %></td>
           <td><%= link_to 'Edit', edit_person_path(person) %></td>
-          <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+
       <% end %>
     </tbody>
   </table>
 
-
+<%= link_to 'FIND BUTTON', pages_results_mother_path %>
 <br>
 <br>
 <br>

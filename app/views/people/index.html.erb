@@ -2,6 +2,14 @@
 
 <h1>People</h1>
 
+<!-- ransack -->
+  <%= search_form_for @q do |f| %>
+  # Search if the name field contains...
+  <%= f.label :name_cont, "Name contains" %><br>
+  <%= f.search_field :name_cont %><br>
+  <div class="actions"><%= f.submit "Search" %></div>
+  <% end %>
+
 <table>
   <thead>
     <tr>
