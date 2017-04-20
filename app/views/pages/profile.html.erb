@@ -1,28 +1,31 @@
 <h1>User Profile</h1>
 
-<!-- <h2>Family</h2> -->
-<!-- <p>Find me in app/views/pages/profile.html.erb</p> -->
-
-
-<!-- <%#= @user_profile.inspect %> -->
-
-
-<tbody>
-  <% @user_profile.each do |profile| %>
+<table class="table table-hover">
+  <thead>
     <tr>
-
-      <td><%= profile.relation %></td><br>
-      <td><%= profile.name %></td><br>
-      <td><%= profile.age %></td><br>
-      <td><%= profile.town %></td><br>
-
-
+      <th>Name</th>
+      <th>Age</th>
+      <th>Town</th>
     </tr>
-    <br>
-  <% end %>
-</tbody>
+  </thead>
 
-  <h1>People</h1>
+  <tbody>
+    <% @user_profile.each do |profile| %>
+      <tr>
+        <td><%= profile.name %></td>
+        <td><%= profile.age %></td>
+        <td><%= profile.town %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<h2>Search for people</h2>
+<%= render 'partials/searchform', person: @person %>
+
+  <h1>Family</h1>
 
   <table class="table table-hover">
     <thead>
@@ -56,7 +59,7 @@
     </tbody>
   </table>
 
-
+<%= link_to 'FIND BUTTON', pages_results_path %>
 <br>
 <br>
 <br>

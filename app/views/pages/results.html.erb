@@ -1,0 +1,33 @@
+<h1>Pages#results</h1>
+<p>Find me in app/views/pages/results.html.erb</p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+
+      <th>Relation</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Town</th>
+      <th>Story</th>
+      <th>Missing</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @person.each do |person| %>
+      <tr>
+
+        <td><%= person.relation %></td>
+        <td><%= person.name %></td>
+        <td><%= person.age %></td>
+        <td><%= person.town %></td>
+        <td><%= person.story %></td>
+        <td><%= person.missing %></td>
+        <td></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
