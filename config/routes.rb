@@ -3,9 +3,15 @@ Rails.application.routes.draw do
 
 
 # redirects signed in user to user profile
+devise_scope :user do
   authenticated :user do
     root 'pages#profile', as: :authenticated_person
   end
+
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
 
   get 'people/newuserprofile'
 
@@ -17,10 +23,7 @@ Rails.application.routes.draw do
 
   get 'pages/person'
 
-
-
-
-  root 'pages#home'
+  root 'pages#home' #not really necessary
 
 
 
