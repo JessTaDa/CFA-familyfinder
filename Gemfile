@@ -11,7 +11,7 @@ gem 'rails', '~> 5.0.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'devise'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'materialize-sass'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Use Puma as the app server
