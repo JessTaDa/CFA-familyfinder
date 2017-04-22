@@ -8,18 +8,20 @@ class Person < ApplicationRecord
 # create first test, a mode test for the person model
 # test that calls search function and returns some result
 #
-end
+#end
 
-def search_for_missing_mother(person)
-  @person_query = Person.where(:relation => 'Mother', :name => person.name, :town => person.town)
-  if @person_query.exists?
-    @person_query.each do |profile|
-      puts profile.name
-      puts profile.town
-    end
-  else
-    puts 'no match'
-  end
+def search_for_missing_person
+  []
+  Person.where(:name => name, :town => town).where.not(:id => id)#after_create
+  # @person_query = Person.where(:relation => 'Mother', :name => name, :town => town)
+  # if @person_query.exists?
+  #   @person_query.each do |profile|
+  #     puts profile.name
+  #     puts profile.town
+  #   end
+  # else
+  #   puts 'no match'
+  # end
 end
 
 
@@ -59,4 +61,6 @@ def search_for_missing_brother(person)
     puts 'no match'
   end
 #    person_search = mum_profile
+end
+
 end
