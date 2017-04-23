@@ -41,6 +41,8 @@
     </thead>
 
     <tbody>
+        <%= @person.inspect %>
+
       <% @person.each do |person| %>
         <tr>
 
@@ -56,8 +58,8 @@
       <% end %>
     </tbody>
   </table>
-
-<%= link_to 'FIND BUTTON', pages_results_mother_path %>
+<%= @person %>
+<%= link_to 'FIND BUTTON', pages_results_path(@person) %>
 <br>
 <br>
 <br>
