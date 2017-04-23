@@ -11,59 +11,38 @@
         </div>
       <% end %>
 
-
-  <div class="input-field">
+  <div class="field">
     <%= f.label :relation %>
     <%= f.text_field :relation %>
     <%= f.select :relation, ['mother', 'father', 'sister', 'brother', 'other'], include_blank: true %>
   </div>
 
-
-
-  <div class="input-field">
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-  <div class="input-field">
+  <div class="field">
     <%= f.label :age %>
     <%= f.number_field :age %>
   </div>
 
-  <div class="input-field">
+  <div class="field">
     <%= f.label :town %>
     <%= f.text_field :town %>
   </div>
 
-  <div class="input-field">
+  <div class="field">
     <%= f.label :story %>
     <%= f.text_area :story %>
   </div>
 
-  <div class="input-field">
+  <div class="field">
     <%= f.label :missing %>
     <%= f.check_box :missing %>
   </div>
 
   <div class="actions">
-    hello
     <%= f.submit %>
   </div>
 <% end %>
-
-<div class="input-field col s6">
-          <input id = story type="text" class="validate">
-          <label for= story>Story</label>
-        </div>
-
-
-  <label>Browser Select</label>
-  <select class="browser-default">
-    <option value="" disabled selected>Choose your option</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
-
-  <div class="section"></div>
-  <div class="section"></div>

@@ -17,4 +17,3 @@
 
 
 //= require materialize-sprockets
-//= require materialize-form

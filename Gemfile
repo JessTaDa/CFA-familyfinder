@@ -12,8 +12,6 @@ gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
 gem 'devise'
 gem 'materialize-sass'
-gem 'simple_form'
-gem 'materialize-form'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Use Puma as the app server
