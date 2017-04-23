@@ -1,44 +1,43 @@
-<div class="container">
   <h2 class="header center">User profile</h2>
   <div class="row">
     <div class="col s12 m6 l12">
       <% @user_profile.each do |profile| %>
-        <div class="card horizontal small">
-          <div class="card-image">
-            <img src="http://lorempixel.com/100/190/nature/6">
-          </div>
+        <div class="card horizontal">
           <div class="card-stacked">
             <div class="card-content">
-             <p><%= profile.name %></p>
-             <p><%= profile.age %></p>
-             <p><%= profile.town %></p>
-           </div>
+              <table>
+                <tr><th>NAME:<th><td><%= profile.name %></td></tr>
+                <tr><th>AGE:<th><td><%= profile.age %></td></tr>
+                <tr><th>TOWN:<th><td><%= profile.town %></td></tr>
+              </table>
+            </div>
            <div class="card-action">
              <p><%= link_to 'Show', profile %><%= link_to 'Edit', edit_person_path(profile) %></p>
            </div>
           </div>
         </div>
-        <% end %>
-      </div>
-      <%= link_to 'Create New Person', new_person_path %>
-<!-- <%#= render 'partials/searchform', person: @person %> -->
+      <% end %>
+    </div>
   </div>
+
+  <%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large", :method => :get %>
+
   <h2 class="header center">Family</h2>
   <div class="row">
     <% @person.where.not(:relation => 'myself').each do |person| %>
-    <div class="col s12 m6 l4">
-        <div class="card horizontal card-panel hoverable">
-         <div class="card-image">
-           <img src="http://lorempixel.com/100/190/nature/6">
-         </div>
+    <div class="col s12 m6 l6">
+        <div class="card horizontal card-panel hoverable center">
          <div class="card-stacked">
-           <div class="card-content">
-             <p>FAMILY MEMBER:  <%= person.relation %></p>
-             <p>NAME:  <%= person.name %></p>
-             <p>AGE:  <%= person.age %></p>
-             <p>TOWN:  <%= person.town %></p>
-             <p>STORY:  <%= person.story %></p>
-             <p>MISSING?  <%= person.missing %></p>
+
+           <div class="card-content center">
+             <table>
+               <tr><th>FAMILY MEMBER:<th><td><%= person.relation %></td></tr>
+               <tr><th>NAME:<th><td><%= person.name %></td></tr>
+               <tr><th>AGE:<th><td><%= person.age %></td></tr>
+               <tr><th>TOWN:<th><td><%= person.town %></td></tr>
+               <tr><th>STORY:<th><td><%= person.story %></td></tr>
+               <tr><th>MISSING?<th><td><%= person.missing %></td></tr>
+             </table>
            </div>
            <div class="card-action">
              <p><%= link_to 'Show', person %><%= link_to 'Edit', edit_person_path(person) %><%= link_to 'SEARCH', pages_results_path(@person), person: @person %></p>
@@ -48,4 +47,3 @@
       </div>
     <% end %>
   </div>
-</div>
