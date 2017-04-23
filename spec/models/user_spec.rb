@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
   it "can't create user without password" do
     user = build(:user, :password => nil)
     expect(user).to_not be_valid
-  # require 'pry'; ; binding.pry
+  require 'pry'; ; binding.pry
   end
 
 end
