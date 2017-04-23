@@ -26,7 +26,7 @@ end
 
 
 def search_for_missing_father(person)
-  @person_query = Person.where(:relation => 'Father', :name => person.name, :town => person.town)
+  @person_query = Person.where(:relation => 'father', :name => person.name, :town => person.town)
   if @person_query.exists?
     @person_query.each do |profile|
       puts profile.name
@@ -38,7 +38,7 @@ def search_for_missing_father(person)
 #    person_search = mum_profile
 end
 def search_for_missing_sister(person)
-  @person_query = Person.where(:relation => 'Sister', :name => person.name, :town => person.town)
+  @person_query = Person.where(:relation => 'sister', :name => person.name, :town => person.town)
   if @person_query.exists?
     @person_query.each do |profile|
       puts profile.name
@@ -51,7 +51,7 @@ def search_for_missing_sister(person)
 end
 
 def search_for_missing_brother(person)
-  @person_query = Person.where(:relation => 'Brother', :name => person.name, :town => person.town)
+  @person_query = Person.where(:relation => 'brother', :name => person.name, :town => person.town)
   if @person_query.exists?
     @person_query.each do |profile|
       puts profile.name
