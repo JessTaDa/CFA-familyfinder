@@ -1,6 +1,6 @@
 <h1>Results for Mother</h1>
 
-<table class="table table-hover">
+<!-- <table class="table table-hover">
   <thead>
     <tr>
       <th>Relation</th>
@@ -27,21 +27,35 @@
       <%# end %>
 
     </tbody>
-  </table>
+  </table> -->
 
 
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Results</th>
+
+        <th>Name</th>
+        <th>Age</th>
+        <th>Town</th>
+        <th>Story</th>
+        <th>Missing</th>
       </tr>
     </thead>
     <tbody>
-      <%# @person.each do |person| %>
-        <tr>
-          <td><%#= search_for_missing_person %></td>
-          <td></td>
-        </tr>
-      <%# end %>
+      <% @person.each do |person| %>
+          <td><% @queries = person.search_for_missing_person %></td>
+          <% @queries.each do |query| %>
+          <tr>
+            <td><%= query.name %></td>
+            <td><%= query.age %></td>
+            <td><%= query.town %></td>
+            <td><%= query.story %></td>
+            <td><%= query.missing %></td>
+            <td><%= query.user_id %></td>
+            <td></td>
+          </tr>
+          <% end %>
+
+      <% end %>
     </tbody>
   </table>

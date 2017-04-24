@@ -42,8 +42,7 @@
            <div class="card-action">
              <p><%= link_to 'Show', person %>
                <%= link_to 'Edit', edit_person_path(person) %>
-               <%= link_to 'SEARCH', pages_results_path, person: @person %></p>
-               <%= @person.inspect %>
+               <%= link_to 'SEARCH', pages_results_path(person)%></p>
            </div>
           </div>
         </div>

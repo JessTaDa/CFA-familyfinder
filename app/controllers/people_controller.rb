@@ -41,7 +41,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+        format.html { redirect_to pages_profile_path, notice: 'Person was successfully created.' }
             # format.html { redirect_to pages_profile_path}
         format.json { render :show, status: :created, location: @person }
       else
