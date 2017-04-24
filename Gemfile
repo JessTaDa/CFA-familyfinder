@@ -13,6 +13,7 @@ gem 'pg', '~> 0.18'
 gem 'devise'
 gem 'materialize-sass'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem "paperclip", "~> 5.0.0"
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
