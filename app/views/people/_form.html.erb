@@ -11,38 +11,109 @@
         </div>
       <% end %>
 
-  <div class="field">
-    <%= f.label :relation %>
-    <%= f.text_field :relation %>
-    <%= f.select :relation, ['mother', 'father', 'sister', 'brother', 'other'], include_blank: true %>
+<div class="row center">
+  <div class="col s4 m4 l3">
+    <input name="person[relation]" type="radio" value="mother" id="mother_test" checked="checked" />
+    <label for="mother_test">Mother</label>
   </div>
+  <div class="col s4 m4 l3">
+    <input name="person[relation]" type="radio" value="father" id="father_test" />
+    <label for="father_test">Father</label>
+  </div>
+  <div class="col s4 m4 l3">
+    <input name="person[relation]" type="radio" value="brother" id="brother_test" />
+    <label for="brother_test">Brother</label>
+  </div>
+  <div class="col s4 m4 l3">
+    <input name="person[relation]" type="radio" value="sister" id="sister_test" />
+    <label for="sister_test">Sister</label>
+  </div>
+</div>
+
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true%>
   </div>
 
   <div class="field">
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :town %>
-    <%= f.text_field :town %>
-  </div>
+    <%= f.text_field :town, :required => true %>
+
 
   <div class="field">
     <%= f.label :story %>
     <%= f.text_area :story %>
   </div>
 
-  <div class="field">
-    <%= f.label :missing %>
-    <%= f.check_box :missing %>
-  </div>
+  <div class="section"></div>
+  <!-- <div class="field">
+<%= hidden_field_tag :missing, '' %>
+<%#= check_box_tag :missing, checked = true %> Missing?</br></br>
+</div> -->
+<!-- <p>
+     <input name="person[missing]" type="checkbox" value="true" class="filled-in" id="missing_true" checked="checked" />
+     <label for="missing_true">Missing</label>
+   </p>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+   <p>
+        <input name="person[missing]" type="hidden" value="false"/>
+
+      </p> -->
+    <div class="row center">
+      <div class="col s4 m4 l3">
+        <input name="person[missing]" type="radio" value="true" id="missing_true" checked="checked" />
+        <label for="missing_true">Missing</label>
+      </div>
+      <div class="col s4 m4 l3">
+        <input name="person[missing]" type="radio" value="false" id="missing_false" />
+        <label for="missing_false">Found</label>
+      </div>
+    </div>
+
+
+      <!-- <p>
+     <input type="checkbox" class="filled-in" id="missing_check" checked="checked" />
+     <label for="missing_check">Missing?</label>
+   </p>
+
+
+<input type="button" class="waves-light btn-large" name="person[missing]" value="true" id="missing" onclick="colorchange('missing')" onclick="valuechange('found')"style="background:rgb(0, 201, 255);" /> -->
+
+
+<!-- <%#= form_for @person do |t| %>
+    <%#= t.hidden_field :missing, :value=>"true"%>
+    <%#= t.submit "Missing" %>
+  <#% end %>
+  <br>
+
+  <%#= form_for @person do |t| %>
+    <%#= t.hidden_field :missing, :value=>"false"%>
+    <%#= t.submit "Found" %>
+  <#% end %> -->
+
+<!--
+  <div class="row center">
+    <div class="col s4 m4 l3">
+      <input name="person[missing]" type="checkbox" id="missing_true" />
+      <label for="missing_true">Missing</label>
+    </div>
+    <div class="col s4 m4 l3">
+      <input name="person[missing]" type="radio" id="missing_false" />
+      <label for="missing_false">Not missing</label>
+    </div>
+  </div> -->
+
+    <!-- <button class="actions waves-light btn-large">
+      <%#= f.submit %>
+    </button> -->
+      <div class="section"></div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="action">Create</button>
+
+    <% end %>
