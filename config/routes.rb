@@ -13,6 +13,10 @@ devise_scope :user do
   end
 end
 
+resources :conversations do
+  resources :messages
+ end
+
   get 'people/newuserprofile'
 
   get 'pages/home'
