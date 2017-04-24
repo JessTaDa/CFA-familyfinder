@@ -2,20 +2,24 @@
 
 <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">Family Finder</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
         <li>
+
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
         </li>
+        <li><%= current_user.email %></li>
+        <li>user id:<%= current_user.id %></li>
       <% else %>
         <li>
         <%= link_to('Login', new_user_session_path)  %>
         </li>
       <% end %>
         <li><%= link_to('Profile', pages_profile_path)%></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+
+        <!-- <li><a href="badges.html">Components</a></li> -->
+        <!-- <li><a href="collapsible.html">JavaScript</a></li> -->
       </ul>
     </div>
   </nav>

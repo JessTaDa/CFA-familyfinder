@@ -17,22 +17,22 @@
   </div> -->
 
   <div class="field">
-    <%= f.text_field :relation, :value => 'myself' %>
+    <%= f.hidden_field :relation, :value => 'myself' %>
   </div>
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :town %>
-    <%= f.text_field :town %>
+    <%= f.text_field :town, :required => true %>
   </div>
 
   <div class="field">
@@ -40,9 +40,8 @@
     <%= f.text_area :story %>
   </div>
 
+  <div class="section"></div>
 
+  <button class="btn waves-effect waves-light" type="submit" name="action">Create</button>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
