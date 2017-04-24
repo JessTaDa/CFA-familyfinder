@@ -10,7 +10,6 @@ class PagesController < ApplicationController
     @person = current_user.persons
     # @people = Person.where(:user_id => current_user.id)
     @user_profile = Person.where(:relation => 'myself', :user_id => current_user.id)
-
     # ransack
     # @q = Person.ransack(params[:q])
     # @people = @q.result#.includes(:relation).people(params[:person])
@@ -21,6 +20,7 @@ class PagesController < ApplicationController
   end
 
   def results
+
     @person = Person.missing_persons(current_user)
   end
 
