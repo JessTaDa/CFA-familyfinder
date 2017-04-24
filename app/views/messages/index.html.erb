@@ -3,7 +3,7 @@
 <% end %>
 <div class="ui segment">
  <% @messages.each do |message| %>
-  <% if message.body %>
+  <% if message.body %>gem
    <% user = User.find(message.user_id) %>
    <div class="item">
     <div class="content">
