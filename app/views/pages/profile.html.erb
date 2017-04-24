@@ -1,6 +1,7 @@
   <h2 class="header center">User profile</h2>
   <div class="row">
     <div class="col s12 m6 l12">
+
       <% @user_profile.each do |profile| %>
         <div class="card horizontal">
           <div class="card-stacked">
@@ -13,6 +14,9 @@
             </div>
            <div class="card-action">
              <p><%= link_to 'Show', profile %><%= link_to 'Edit', edit_person_path(profile) %></p>
+
+
+
            </div>
           </div>
         </div>
@@ -30,6 +34,7 @@
          <div class="card-stacked">
 
            <div class="card-content center">
+             <%= image_tag person.avatar.url(:medium) %>
              <table>
                <tr><th>FAMILY MEMBER:<th><td><%= person.relation %></td></tr>
                <tr><th>NAME:<th><td><%= person.name %></td></tr>

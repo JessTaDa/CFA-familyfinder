@@ -1,6 +1,8 @@
 class Person < ApplicationRecord
   belongs_to :user
   scope :missing_persons, ->(user) { where(user:user, missing: true)}
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 # search method here
 # install rspec
@@ -13,14 +15,6 @@ class Person < ApplicationRecord
   def search_for_missing_person
     []
     Person.where(:name => name, :town => town).where.not(:id => id)#after_create
-    # @person_query = Person.where(:relation => 'Mother', :name => name, :town => town)
-    # if @person_query.exists?
-    #   @person_query.each do |profile|
-    #     puts profile.name
-    #     puts profile.town
-    #   end
-    # else
-    #   puts 'no match'
-    # end
+
   end
 end
