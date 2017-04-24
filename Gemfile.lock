@@ -179,6 +179,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rolify (5.1.0)
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -261,6 +262,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails-controller-testing
   ransack!
+  rolify
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   spring
