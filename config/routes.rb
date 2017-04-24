@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
 
+  get 'contact/index'
+
+  get 'contact/mail'
+
 # redirects signed in user to user profile
 devise_scope :user do
   authenticated :user do
@@ -28,6 +32,10 @@ resources :conversations do
   get 'pages/person'
 
   root 'pages#home' #not really necessary
+
+  get 'contact', to: "contact#index"
+
+  post 'contact', to: "contact#mail"
 
 
 
