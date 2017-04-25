@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 # redirects signed in user to user profile
 devise_scope :user do
   authenticated :user do
+
     root 'pages#profile', as: :authenticated_person
   end
 
@@ -29,6 +30,8 @@ resources :conversations do
   get 'pages/home'
 
   get 'pages/profile'
+
+  get 'pages/admin_dashboard'
 
   get 'pages/results', to: 'pages#results' # to get pages_results_path in rake routes
 

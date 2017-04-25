@@ -4,6 +4,10 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_sign_in_path_for(resource)
-    pages_profile_path
+    if current_user.has_role :admin?
+      pages_admin_dashboard_path
+    else
+      pages_profile_path
+    end
   end
 end

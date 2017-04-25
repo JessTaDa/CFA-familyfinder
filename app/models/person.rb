@@ -14,7 +14,7 @@ class Person < ApplicationRecord
 
   def search_for_missing_person
     []
-    Person.where(:name => name, :town => town).where.not(:id => id)#after_create
+    Person.where(:name => name, :town => town).where.not(:id => id)
 
   end
 end
