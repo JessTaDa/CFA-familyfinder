@@ -22,10 +22,15 @@
       <% end %>
     </div>
   </div>
+  <div class="center"><%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large green", :method => :get %></div>
 
-  <%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large green", :method => :get %>
+  <div class="section"></div>
+  <div class="section"></div>
 
   <h2 class="header center">Family</h2>
+  <div class="section"></div>
+  <div class="center"><%= button_to "SEARCH FOR FAMILY", pages_results_path(@person), :class => "btn waves-light btn-large green", :method => :get %></div>
+  <div class="section"></div>
   <div class="row">
     <% @person.where.not(:relation => 'myself').each do |person| %>
       <div class="col s12 m6 l6">
@@ -45,7 +50,7 @@
            <div class="card-action green-text">
              <p><%= link_to 'Show', person %>
                <%= link_to 'Edit', edit_person_path(person) %>
-               <%= link_to 'SEARCH', pages_results_path(@person)%></p>
+
            </div>
           </div>
         </div>
