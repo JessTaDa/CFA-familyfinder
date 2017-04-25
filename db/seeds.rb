@@ -19,17 +19,17 @@ user4.add_role :user
 user2 = User.find_by_email('sonny@email.com')
 # list2 = student1.lists.first
 # list_id2 = list2.id
-user2.persons.create(name: 'sonny',age: 10, town: 'pixtown', relation: 'myself', missing:'false')
-user2.persons.create(name: 'mummy',age: 40, town: 'pixtown', relation: 'mother', missing: 'true')
-user2.persons.create(name: 'daddy',age: 45, town: 'pixtown', relation: 'father', missing: 'true')
+user2.persons.create(name: 'Sonny',age: 10, town: 'Battambang', story:'I got seperated from my parents when we were evacuated from our home in Phnom Penh. I escaped to a Thai refugee camp and now reside in Belgium', relation: 'myself', missing:'false')
+user2.persons.create(name: 'Mummy',age: 40, town: 'Battambang', story:'My father went to look for my mother after she failed to return from work in the Battambang province. We never saw her again.', relation: 'mother', missing: 'true')
+user2.persons.create(name: 'Daddy',age: 45, town: 'Battambang', story:'My father was a former policeman. The Khmer Rouge evacuated my father to the Battambang province. After 1979, my mother went to search for him there. Someone told my mom that he was tied up and led west towards Phnom Penh. She assumed he died because my father never returned.', relation: 'father', missing: 'true')
 
-user3.persons.create(name: 'mummy',age: 40, town: 'pixtown', relation: 'myself', missing:'false')
-user3.persons.create(name: 'sonny',age: 10, town: 'pixtown', relation: 'son', missing: 'true')
-user3.persons.create(name: 'daddy',age: 45, town: 'pixtown', relation: 'husband', missing: 'true')
+user3.persons.create(name: 'Mummy',age: 40, town: 'Battambang', story:'I am searching for my son who went missing by the river as we were trying to escape sometime after 1978.' , relation: 'myself', missing:'false')
+user3.persons.create(name: 'Sonny',age: 10, town: 'Battambang', story:'The last time I saw him was near the river north of Battambang town center. I was taken by soldiers and I lost sight of him. I hope he is still alive.', relation: 'son', missing: 'true')
+user3.persons.create(name: 'Daddy',age: 45, town: 'Battambang', story:'The Khmer Rouge took my husband for questioning and he never came back. A villager said they saw him being beaten by soldiers and tied to a tree. I have not seen him since that day in 1978', relation: 'husband', missing: 'true')
 
-user4.persons.create(name: 'daddy',age: 45, town: 'pixtown', relation: 'myself', missing:'false')
-user4.persons.create(name: 'mummy',age: 40, town: 'pixtown', relation: 'wife', missing: 'true')
-user4.persons.create(name: 'sonny',age: 10, town: 'pixtown', relation: 'son', missing: 'true')
+user4.persons.create(name: 'Daddy',age: 45, town: 'Battambang', story:'I am from the Battambang province and was seperated from my family in a crowd south of the Battambong river in 1978', relation: 'myself', missing:'false')
+user4.persons.create(name: 'Mummy',age: 40, town: 'Battambang', story:'My wife went to get rice for my son and never came back. I hope she is still alive. I have searched everywhere for her. ', relation: 'wife', missing: 'true')
+user4.persons.create(name: 'Sonny',age: 10, town: 'Battambang', story:'My son was 10 when he did not come home from school in 1978. Some of the other boys were taken to a child labour camp. I have tried to search for him but with no luck.', relation: 'son', missing: 'true')
 
 # teacher = User.find_by_email('teacher1@gmail.com')
 # list = teacher.lists.first

@@ -3,15 +3,17 @@
 <% end %>
 <div class="ui segment">
  <% @messages.each do |message| %>
-  <% if message.body %>gem
+  <% if message.body %>
    <% user = User.find(message.user_id) %>
    <div class="item">
     <div class="content">
+      <div class="section"></div>
      <div class="header"><strong><%= user.email %></strong>     <%= message.message_time %></div>
       <div class="list">
        <div class="item">
         <i class="right triangle icon"></i>
          <%= message.body %>
+         <div class="section"></div>
       </div>
     </div>
    </div>
@@ -24,7 +26,8 @@
    <%= f.text_area :body, class: "form-control" %>
  </div>
  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+ <!-- <div class="section"></div> -->
  <div>
-   <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+   <%= f.submit "Add Reply", class: "ui green labeled submit icon button btn" %>
  </div>
 <% end %>
