@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large", :method => :get %>
+  <%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large green", :method => :get %>
 
   <h2 class="header center">Family</h2>
   <div class="row">
@@ -47,7 +47,7 @@
                <tr><th>MISSING?<th><td><%= person.missing %></td></tr>
              </table>
            </div>
-           <div class="card-action">
+           <div class="card-action green-text">
              <p><%= link_to 'Show', person %>
                <%= link_to 'Edit', edit_person_path(person) %>
                <%= link_to 'SEARCH', pages_results_path(@person)%></p>
