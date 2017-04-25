@@ -13,7 +13,7 @@
 
 <h1>Contact Us</h1>
 
-<%= simple_form_for :contact do |f| %>
+<%= form_for :contact do |f| %>
     <%= f.input :email, placeholder: 'type email here' %>
     <%= f.input :message, placeholder: 'type message here', :as => :text %>
     <%= f.button :submit, "Send" %>
