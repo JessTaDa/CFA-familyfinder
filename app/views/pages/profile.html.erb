@@ -10,6 +10,9 @@
                 <tr><th>NAME:<th><td><%= profile.name %></td></tr>
                 <tr><th>AGE:<th><td><%= profile.age %></td></tr>
                 <tr><th>TOWN:<th><td><%= profile.town %></td></tr>
+                  <% @person.where.not(:relation => 'myself').each do |person| %>
+                  <%= image_tag person.avatar.url(:medium) %>
+                  <% end %>
               </table>
             </div>
            <div class="card-action">
@@ -47,7 +50,6 @@
            <div class="card-action">
              <p><%= link_to 'Show', person %>
                <%= link_to 'Edit', edit_person_path(person) %>
-               <%= person.name %>
                <%= link_to 'SEARCH', pages_results_path(@person)%></p>
            </div>
           </div>
