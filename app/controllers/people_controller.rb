@@ -36,7 +36,7 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
-    authorize @person
+    # authorize @person
     @person = Person.new(person_params)
     @person.user_id = current_user.id
 
@@ -87,7 +87,7 @@ class PeopleController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
       params.require(:person).permit(:user_id, :relation, :name, :age, :town, :story, :missing, :q, :avatar)
-      params.require(:person).permit(policy(@person).permitted_attributes)
+      # params.require(:person).permit(policy(@person).permitted_attributes)
 
     end
 end

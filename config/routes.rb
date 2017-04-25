@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'contact', to: "contact#index"
 
-
-  get 'contact/index'
-
-  get 'contact/mail'
+  post 'contact', to: "contact#mail"
 
 # redirects signed in user to user profile
 devise_scope :user do
@@ -21,6 +19,11 @@ resources :conversations do
   resources :messages
  end
 
+
+
+
+  root 'pages#home' #not really necessary
+
   get 'people/newuserprofile'
 
   get 'pages/home'
@@ -30,12 +33,6 @@ resources :conversations do
   get 'pages/results', to: 'pages#results' # to get pages_results_path in rake routes
 
   get 'pages/person'
-
-  root 'pages#home' #not really necessary
-
-  get 'contact', to: "contact#index"
-
-  post 'contact', to: "contact#mail"
 
 
 

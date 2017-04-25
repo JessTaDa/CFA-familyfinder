@@ -1,39 +1,56 @@
-<p id="notice"><%= notice %></p>
+<h3 id="notice"><%= notice %></h3>
 
 <!-- <p>
   <strong>User:</strong>
   <%#= @person. %>
 </p> -->
 
-<p>
-  <strong>Relation:</strong>
-  <%= @person.relation %>
-</p>
+<div class="row">
+<div class="col s12 m6 l6">
+    <div class="card horizontal card-panel hoverable center">
+     <div class="card-stacked">
 
-<p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
+       <div class="card-content center">
+         <!-- <%#= image_tag person.avatar.url(:medium) %> -->
+         <table>
+           <tr><th>
+             <strong>Relation:</strong>
+             <td><%= @person.relation %>
+           </td></th><tr>
 
-<p>
-  <strong>Age:</strong>
-  <%= @person.age %>
-</p>
+           <tr><th>
+             <strong>Name:</strong>
+             <td><%= @person.name %>
+           </td></th><tr>
 
-<p>
-  <strong>Town:</strong>
-  <%= @person.town %>
-</p>
+           <tr><th>
+             <strong>Age:</strong>
+             <td><%= @person.age %>
+           </td></th><tr>
 
-<p>
-  <strong>Story:</strong>
-  <%= @person.story %>
-</p>
+           <tr><th>
+             <strong>Town:</strong>
+             <td><%= @person.town %>
+           </td></th><tr>
 
-<p>
-  <strong>Missing:</strong>
-  <%= @person.missing %>
-</p>
+           <tr><th>
+             <strong>Story:</strong>
+             <td><%= @person.story %>
+           </td></th><tr>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<!-- <%#= link_to 'Back', people_path %> -->
+           <tr><th>
+             <strong>Missing:</strong>
+             <td><%= @person.missing %>
+           </td></th><tr>
+         </table>
+       </div>
+       <div class="card-action">
+         <p>
+           <%= link_to 'Edit', edit_person_path(@person) %>
+           <%= link_to 'SEARCH', pages_results_path(@person)%></p>
+       </div>
+
+      </div>
+    </div>
+      </div>
+      </div>
