@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>People</h1>
+<h1>Search people database</h1>
 
 <!-- ransack -->
   <%= search_form_for @q do |f| %>
-  # Search if the name field contains...
-  <%= f.label :name_cont, "Name contains" %><br>
+Search all entries containing
+  <!-- <%#= f.label :name_cont %><br> -->
   <%= f.search_field :name_cont %><br>
-  <div class="actions"><%= f.submit "Search" %></div>
+  <!-- <div class="actions"><%#= f.submit "Search" %></div> -->
+  <%= button_to "Search database", :type =>'submit', :class => 'btn waves-light', :method => "get" %>
   <% end %>
 
 <table>
