@@ -1,5 +1,3 @@
-# Family finder
-
 # Overview
 - Setup
 - Usage
@@ -104,11 +102,17 @@ Below are several examples of early wireframe designs.
 ![alt tag](http://i.imgur.com/IKogkVs.png)
 ![alt tag](http://i.imgur.com/SXJP89c.png)
 
+# Testing
+Testing was implemented throughout the app using 'rspec'. Code quality was assessed on 'CodeClimte'
+
+![alt tag](http://i.imgur.com/EMXEt7y.png)
+
 # Future features
 - Improved search algorithms for increased accuracy and higher match rates
 - Collection of good quality data
 - Increased privacy features and security
 - Offline mode to allow for data input when internet is not available
+
 
 
 
