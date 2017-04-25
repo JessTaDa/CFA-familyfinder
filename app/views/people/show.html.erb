@@ -1,43 +1,31 @@
 <h3 id="notice"><%= notice %></h3>
 
-<!-- <p>
-  <strong>User:</strong>
-  <%#= @person. %>
-</p> -->
-
 <div class="row">
-<div class="col s12 m6 l6">
+  <div class="col s12 m6 l6">
     <div class="card horizontal card-panel hoverable center">
      <div class="card-stacked">
-
        <div class="card-content center">
-         <!-- <%#= image_tag person.avatar.url(:medium) %> -->
          <table>
            <tr><th>
              <strong>Relation:</strong>
              <td><%= @person.relation %>
            </td></th><tr>
-
            <tr><th>
              <strong>Name:</strong>
              <td><%= @person.name %>
            </td></th><tr>
-
            <tr><th>
              <strong>Age:</strong>
              <td><%= @person.age %>
            </td></th><tr>
-
            <tr><th>
              <strong>Town:</strong>
              <td><%= @person.town %>
            </td></th><tr>
-
            <tr><th>
              <strong>Story:</strong>
              <td><%= @person.story %>
            </td></th><tr>
-
            <tr><th>
              <strong>Missing:</strong>
              <td><%= @person.missing %>
@@ -45,12 +33,11 @@
          </table>
        </div>
        <div class="card-action">
-         <p>
-           <%= link_to 'Edit', edit_person_path(@person) %>
-           <%= link_to 'SEARCH', pages_results_path(@person)%></p>
+       <p>
+         <%= link_to 'Edit', edit_person_path(@person) %>
+         <%= link_to 'SEARCH', pages_results_path(@person)%></p>
        </div>
-
       </div>
     </div>
-      </div>
-      </div>
+  </div>
+</div>

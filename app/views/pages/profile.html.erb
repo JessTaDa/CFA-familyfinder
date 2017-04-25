@@ -1,7 +1,6 @@
   <h2 class="header center">User profile</h2>
   <div class="row">
     <div class="col s12 m6 l12">
-
       <% @user_profile.each do |profile| %>
         <div class="card horizontal">
           <div class="card-stacked">
@@ -15,12 +14,9 @@
                   <% end %>
               </table>
             </div>
-           <div class="card-action">
-             <p><%= link_to 'Show', profile %><%= link_to 'Edit', edit_person_path(profile) %></p>
-
-
-
-           </div>
+            <div class="card-action">
+              <p><%= link_to 'Show', profile %><%= link_to 'Edit', edit_person_path(profile) %></p>
+            </div>
           </div>
         </div>
       <% end %>
@@ -32,10 +28,9 @@
   <h2 class="header center">Family</h2>
   <div class="row">
     <% @person.where.not(:relation => 'myself').each do |person| %>
-    <div class="col s12 m6 l6">
+      <div class="col s12 m6 l6">
         <div class="card horizontal card-panel hoverable center">
          <div class="card-stacked">
-
            <div class="card-content center">
              <%= image_tag person.avatar.url(:medium) %>
              <table>

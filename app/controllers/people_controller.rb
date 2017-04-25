@@ -9,10 +9,7 @@ class PeopleController < ApplicationController
     if current_user.has_role? :admin
       puts "Welcome to Admin Dashboard"
     else
-      # pages_profile_path
       redirect_to pages_profile_path(@person), alert: "Watch it, mister!"
-      #format.html { redirect_to :back, notice: 'You don not have access to this page.' }
-      #format.json { render :show}#, status: :created, location: @person }
     end
   end
 
@@ -20,17 +17,16 @@ class PeopleController < ApplicationController
     @people = Person.all
     # ransack
     @q = Person.ransack(params[:q])
-    @people = @q.result#.includes(:relation).people(params[:person])
+    @people = @q.result
   end
 
     # GET /people/1
     # GET /people/1.json
   def show
-    # @person = Person.find(params[:id])
     @people = Person.where(:user_id => current_user.id)
     # ransack
     @q = Person.ransack(params[:q])
-    @people = @q.result#.includes(:relation).people(params[:person])
+    @people = @q.result
   end
 
   # GET /people/new
@@ -56,7 +52,6 @@ class PeopleController < ApplicationController
     respond_to do |format|
       if @person.save
         format.html { redirect_to pages_profile_path, notice: 'Person was successfully created.' }
-            # format.html { redirect_to pages_profile_path}
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new }
@@ -100,7 +95,5 @@ class PeopleController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
       params.require(:person).permit(:user_id, :relation, :name, :age, :town, :story, :missing, :q, :avatar)
-      # params.require(:person).permit(policy(@person).permitted_attributes)
-
     end
 end

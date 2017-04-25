@@ -12,13 +12,13 @@ def index
    @over_ten = false
    @messages = @conversation.messages
   end
- if @messages.last
-  if @messages.last.user_id != current_user.id
-   @messages.last.read = true;
+  if @messages.last
+    if @messages.last.user_id != current_user.id
+      @messages.last.read = true;
+    end
   end
- end
-@message = @conversation.messages.new
- end
+  @message = @conversation.messages.new
+end
 def new
  @message = @conversation.messages.new
 end

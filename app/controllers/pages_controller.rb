@@ -9,7 +9,6 @@ class PagesController < ApplicationController
   def profile
     @person = current_user.persons
     @user_profile = Person.where(:relation => 'myself', :user_id => current_user.id)
-
   end
 
   def admin_dashboard

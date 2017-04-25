@@ -1,14 +1,12 @@
 <%= form_for @person, html: { multipart: true } do |f| %>
-
       <% if person.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
-
-              <ul>
-              <% person.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-              </ul>
+          <ul>
+            <% person.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
         </div>
       <% end %>
 
@@ -62,24 +60,24 @@
     <%= f.text_area :story %>
   </div>
   <div class="section"></div>
-
-    <div class="row center">
-      <div class="col s4 m4 l3">
-        <input name="person[missing]" type="radio" value="true" id="missing_true" checked="checked" />
-        <label for="missing_true">Missing</label>
-      </div>
-      <div class="col s4 m4 l3">
-        <input name="person[missing]" type="radio" value="false" id="missing_false" />
-        <label for="missing_false">Found</label>
-      </div>
+  <div class="row center">
+    <div class="col s4 m4 l3">
+      <input name="person[missing]" type="radio" value="true" id="missing_true" checked="checked" />
+      <label for="missing_true">Missing</label>
     </div>
-
-    <div class="field">
-      <%= f.label :image %>
-      <%= f.file_field :avatar %>
+    <div class="col s4 m4 l3">
+      <input name="person[missing]" type="radio" value="false" id="missing_false" />
+      <label for="missing_false">Found</label>
     </div>
+  </div>
 
-    <div class="section"></div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Create</button>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :avatar %>
+  </div>
 
-    <% end %>
+  <div class="section"></div>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action">Create</button>
+
+  <% end %>

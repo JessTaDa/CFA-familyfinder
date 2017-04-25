@@ -1,48 +1,7 @@
 <h1>Search results</h1>
-<!--
-<h3> All Users</h3>
- <div class="ui list">
-  <% @users.each do |user| %>
-   <% if user.id != current_user.id %>
-    <div class="item">
-  <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-</div>
- <% end %>
-<% end %>
-</div> -->
-<!-- <table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Relation</th>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Town</th>
-      <th>Story</th>
-      <th>Missing</th>
-
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @person.each do |person| %>
-        <tr>
-          <td><%= person.relation %></td>
-          <td><%= person.name %></td>
-          <td><%= person.age %></td>
-          <td><%= person.town %></td>
-          <td><%= person.story %></td>
-          <td><%= person.missing %></td>
-          <td></td>
-        </tr>
-      <% end %>
-
-    </tbody>
-  </table> -->
-
   <table class="table table-hover">
     <thead>
       <tr>
-
         <th>Name</th>
         <th>Age</th>
         <th>Town</th>
@@ -51,14 +10,9 @@
         <th>Contact</th>
       </tr>
     </thead>
-
-<!-- @person = list of missing:true user.id=current_user -->
-
     <tbody>
       <% @person.each do |person| %>
-          <td><% @queries = person.search_for_missing_person %></td>
-
-
+        <td><% @queries = person.search_for_missing_person %></td>
           <% @queries.each do |query| %>
             <tr>
               <td><%= query.name %></td>
@@ -66,19 +20,15 @@
               <td><%= query.town %></td>
               <td><%= query.story %></td>
               <td><%= query.missing %></td>
-
-            <% @owners = User.where(:id => query.user_id) %>
-
-            <div class="ui list">
-              <% @owners.each do |owner| %>
+              <% @owners = User.where(:id => query.user_id) %>
+              <div class="ui list">
+                <% @owners.each do |owner| %>
                  <td><%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: owner.id), method: 'post'%></td>
-              <% end %>
-            </div>
+                <% end %>
+              </div>
+             <% end %>
+            </tr>
 
-         <% end %>
-
-
-          </tr>
-          <% end %>
+      <% end %>
     </tbody>
   </table>
