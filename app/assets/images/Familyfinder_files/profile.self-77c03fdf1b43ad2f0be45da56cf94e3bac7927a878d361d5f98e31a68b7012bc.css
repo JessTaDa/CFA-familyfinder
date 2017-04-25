@@ -1,0 +1,8 @@
+/* line 1, /Users/JessicaNgo/Documents/RAILS/familyfinder/app/assets/stylesheets/profile.scss */
+td, th {
+  padding: 5px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}

@@ -24,6 +24,8 @@ class PagesController < ApplicationController
 
   def results
     @person = Person.missing_persons(current_user)
+    @users = User.all
+    @conversations = Conversation.all
   end
 
   def set_current_user
