@@ -1,8 +1,21 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :check_role, only: [:index]
 
   # GET /people
   # GET /people.json
+
+  def check_role
+    if current_user.has_role? :admin
+      puts "Welcome to Admin Dashboard"
+    else
+      # pages_profile_path
+      redirect_to pages_profile_path(@person), alert: "Watch it, mister!"
+      #format.html { redirect_to :back, notice: 'You don not have access to this page.' }
+      #format.json { render :show}#, status: :created, location: @person }
+    end
+  end
+
   def index
     @people = Person.all
     # ransack

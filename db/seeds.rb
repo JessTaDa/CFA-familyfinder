@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1admin = User.create!(email: 'admin@familyfinder.com', password: 'asdasd', user_id: 1)
-user2 = User.create!(email: 'sonny@email.com', password: 'asdasd', user_id: 2)
-user3= User.create!(email: 'mummy@email.com', password: 'asdasd', user_id: 3)
-user4 = User.create!(email: 'daddy@email.com', password: 'asdasd', user_id: 4)
-
-admin.add_role :admin
-user2.add_role :user
-user3.add_role :user
-user4.add_role :user
+# user1admin = User.create!(email: 'admin@familyfinder.com', password: 'asdasd', user_id: 1)
+# user2 = User.create!(email: 'sonny@email.com', password: 'asdasd', user_id: 2)
+# user3= User.create!(email: 'mummy@email.com', password: 'asdasd', user_id: 3)
+# user4 = User.create!(email: 'daddy@email.com', password: 'asdasd', user_id: 4)
+#
+# admin.add_role :admin
+# user2.add_role :user
+# user3.add_role :user
+# user4.add_role :user
 #
 # student1 = User.find_by_email('student1@gmail.com')
 # list2 = student1.lists.first
