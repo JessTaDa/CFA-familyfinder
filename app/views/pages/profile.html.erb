@@ -9,7 +9,7 @@
                 <tr><th>NAME:<th><td><%= profile.name %></td></tr>
                 <tr><th>AGE:<th><td><%= profile.age %></td></tr>
                 <tr><th>TOWN:<th><td><%= profile.town %></td></tr>
-                  <% @person.where.not(:relation => 'myself').each do |person| %>
+                  <% @person.where(:relation => 'myself').each do |person| %>
                   <%= image_tag person.avatar.url(:medium) %>
                   <% end %>
               </table>
