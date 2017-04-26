@@ -22,14 +22,16 @@
       <% end %>
     </div>
   </div>
+  <div class="center"><%= button_to "Inbox", conversations_path(@person), :class => "btn waves-light btn-large green", :method => :get %></div>
+  <div class="section"></div>
   <div class="center"><%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large green", :method => :get %></div>
-
   <div class="section"></div>
   <div class="section"></div>
 
   <h2 class="header center">Family</h2>
   <div class="section"></div>
   <div class="center"><%= button_to "SEARCH FOR FAMILY", pages_results_path(@person), :class => "btn waves-light btn-large green", :method => :get %></div>
+
   <div class="section"></div>
   <div class="row">
     <% @person.where.not(:relation => 'myself').each do |person| %>
