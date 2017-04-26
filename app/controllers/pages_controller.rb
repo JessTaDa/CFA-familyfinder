@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   before_action :authenticate_user!, :except => [:home]
+  before_action :check_role, only: [:admin_dashboard]
   # before_action :set_current_user, :only [:profile]
 
   def home
@@ -9,6 +10,14 @@ class PagesController < ApplicationController
   def profile
     @person = current_user.persons
     @user_profile = Person.where(:relation => 'myself', :user_id => current_user.id)
+  end
+
+  def check_role
+    if current_user.has_role? :admin
+      puts "Welcome to Admin Dashboard"
+    else
+      redirect_to pages_profile_path(@person), alert: "Watch it, mister!"
+    end
   end
 
   def admin_dashboard
