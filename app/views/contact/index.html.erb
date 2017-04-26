@@ -7,7 +7,7 @@
   <% end %>
   <h4>Contact us</h4>
   <%= simple_form_for :contact do |f| %>
-    <%= f.input :email, placeholder: 'type email here' %>
+    <%= f.hidden_field :email => current_user.email, placeholder: 'type email here' %>
     <%= f.input :message, placeholder: 'type message here', :as => :text %>
     <%= f.button :submit, "Send" %>
   <% end %>

@@ -25,7 +25,7 @@
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.user %></td>
+        <td><%= person.user.email %></td>
         <td><%= person.relation %></td>
         <td><%= person.name %></td>
         <td><%= person.age %></td>
