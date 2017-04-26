@@ -2,7 +2,6 @@ class PagesController < ApplicationController
 
   before_action :authenticate_user!, :except => [:home]
   before_action :check_role, only: [:admin_dashboard]
-  # before_action :set_current_user, :only [:profile]
 
   def home
   end

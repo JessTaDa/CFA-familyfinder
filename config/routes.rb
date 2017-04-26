@@ -18,10 +18,7 @@ resources :conversations do
   resources :messages
  end
 
-
-
-
-  root 'pages#home'
+  get 'pages/home'
 
   get 'people/newuserprofile'
 

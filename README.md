@@ -86,7 +86,7 @@ Several brainstorming sessions were conducted to estabish the core functionality
 
 User and developer stories are important in the beginning of any design process, as to ensure the end product being developed meets its necessary requirements. User and developer stories were brainstormed and fleshed out in 'trello'. A snapshot of the process can be seen below.
 
-![alt tag](http://i.imgur.com/hD116ln.png)
+![alt tag](http://i.imgur.com/Wmz8kYq.png)
 
 Several brainstorming sessions were conducted to estabish the core functionality requirements and entity relationships for the application.
 
