@@ -1,6 +1,9 @@
 #  Family Finder - CFA Major Project 2
 
 Deployed at https://familyfinder.herokuapp.com/
+Example user:
+  login: mummy@email.com
+  password: asdasd
 
 # Overview
 - Setup
