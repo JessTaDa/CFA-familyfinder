@@ -1,7 +1,6 @@
   <h2 class="header center">User profile</h2>
   <div class="row">
     <div class="col s12 m6 l12">
-
       <% @user_profile.each do |profile| %>
         <div class="card horizontal">
           <div class="card-stacked">
@@ -10,29 +9,35 @@
                 <tr><th>NAME:<th><td><%= profile.name %></td></tr>
                 <tr><th>AGE:<th><td><%= profile.age %></td></tr>
                 <tr><th>TOWN:<th><td><%= profile.town %></td></tr>
+                  <% @person.where(:relation => 'myself').each do |person| %>
+                  <%= image_tag person.avatar.url(:medium) %>
+                  <% end %>
               </table>
             </div>
-           <div class="card-action">
-             <p><%= link_to 'Show', profile %><%= link_to 'Edit', edit_person_path(profile) %></p>
-
-
-
-           </div>
+            <div class="card-action">
+              <p><%= link_to 'Show', profile %><%= link_to 'Edit', edit_person_path(profile) %></p>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-
-  <%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large", :method => :get %>
+  <div class="center"><%= button_to "Inbox", conversations_path(@person), :class => "btn waves-light btn-large green", :method => :get %></div>
+  <div class="section"></div>
+  <div class="center"><%= button_to "Create new person", new_person_path, :class => "btn waves-light btn-large green", :method => :get %></div>
+  <div class="section"></div>
+  <div class="section"></div>
 
   <h2 class="header center">Family</h2>
+  <div class="section"></div>
+  <div class="center"><%= button_to "SEARCH FOR FAMILY", pages_results_path(@person), :class => "btn waves-light btn-large green", :method => :get %></div>
+
+  <div class="section"></div>
   <div class="row">
     <% @person.where.not(:relation => 'myself').each do |person| %>
-    <div class="col s12 m6 l6">
+      <div class="col s12 m6 l6">
         <div class="card horizontal card-panel hoverable center">
          <div class="card-stacked">
-
            <div class="card-content center">
              <%= image_tag person.avatar.url(:medium) %>
              <table>
@@ -44,11 +49,10 @@
                <tr><th>MISSING?<th><td><%= person.missing %></td></tr>
              </table>
            </div>
-           <div class="card-action">
+           <div class="card-action green-text">
              <p><%= link_to 'Show', person %>
                <%= link_to 'Edit', edit_person_path(person) %>
-               <%= person.name %>
-               <%= link_to 'SEARCH', pages_results_path(@person)%></p>
+
            </div>
           </div>
         </div>

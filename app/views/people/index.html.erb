@@ -2,13 +2,10 @@
 
 <h1>Search people database</h1>
 
-<!-- ransack -->
   <%= search_form_for @q do |f| %>
-Search all entries containing
-  <!-- <%#= f.label :name_cont %><br> -->
-  <%= f.search_field :name_cont %><br>
-  <!-- <div class="actions"><%#= f.submit "Search" %></div> -->
-  <%= button_to "Search database", :type =>'submit', :class => 'btn waves-light', :method => "get" %>
+    Search all entries containing
+    <%= f.search_field :name_cont %><br>
+    <%= button_to "Search database", :type =>'submit', :class => 'btn waves-light', :method => "get" %>
   <% end %>
 
 <table>
@@ -28,7 +25,7 @@ Search all entries containing
   <tbody>
     <% @people.each do |person| %>
       <tr>
-        <td><%= person.user %></td>
+        <td><%= person.user.email %></td>
         <td><%= person.relation %></td>
         <td><%= person.name %></td>
         <td><%= person.age %></td>
