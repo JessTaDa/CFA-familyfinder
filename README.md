@@ -1,9 +1,7 @@
 #  Family Finder - CFA Major Project 2
 
 Deployed at https://familyfinder.herokuapp.com/
-Example user:
-  login: mummy@email.com
-  password: asdasd
+ Example user: (login: 'mummy@email.com',   password: 'asdasd' )
 
 # Overview
 - Setup
@@ -48,7 +46,9 @@ Once created, users can choose to edit their 'people files' and their own detail
 ![alt tag](http://i.imgur.com/DMpzyPU.png)
 
 
-Users with 'admin' privilages are able to search through the entire directory for matches. This feature is restricted to only admins for now.
+Users with 'admin' privilages are able to search through the entire directory for matches. This feature is accessed through the admin database and is restricted to only administrative users only for now.
+
+![alt tag](http://imgur.com/hLE8n5c.png)
 
 ![alt tag](http://i.imgur.com/MRJ4f4R.png)
 
